@@ -1,0 +1,5 @@
+# This was a simple config file to limit CPU usage when trying to run local LLM on the Linux before using API's
+
+FROM llama3.2:1b
+
+PARAMETER num_thread 2
