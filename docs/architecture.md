@@ -164,7 +164,7 @@ This suggests a constrained local inference setup intended for small, low-overhe
 flowchart LR
   subgraph C["Cockpit: 2017 iMac (macOS)"]
     T["Terminal / Operator"]
-    F["tunnel-odysseus\nssh -N -L 7777:127.0.0.1:7000 galyn@100.74.100.15"]
+    F["tunnel-odysseus<br/>ssh -N -L 7777:127.0.0.1:7000 galyn@100.74.100.15"]
   end
 
   subgraph M["Tailscale Mesh"]
@@ -172,14 +172,14 @@ flowchart LR
   end
 
   subgraph L["Mint: 2009 iMac (Linux Mint MATE)"]
-    H["mint-host\n100.74.100.15"]
-    A["Odysseus backend\n127.0.0.1:7000"]
+    H["mint-host<br/>100.74.100.15"]
+    A["Odysseus backend<br/>127.0.0.1:7000"]
     V["VirtualBox / headless VM host"]
   end
 
   subgraph G["Guest VMs"]
-    X["arch-vm\n192.168.1.149"]
-    D["debian-vm\n192.168.1.157"]
+    X["arch-vm<br/>192.168.1.149"]
+    D["debian-vm<br/>192.168.1.157"]
   end
 
   T --> TS --> H
@@ -188,7 +188,6 @@ flowchart LR
   F -->|Local port 7777| H --> A
   H --> V --> X
   V --> D
-```
 
 ## Operational Notes
 
