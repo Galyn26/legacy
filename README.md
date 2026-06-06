@@ -21,6 +21,14 @@ This repository serves as the definitive configuration archive for the entire ba
 
 ---
 
+## 📚 Deep Research & Whitepapers
+
+As part of the design and hardening phases of this laboratory, deep technical research was conducted into the underlying security layers of multi-tenant environments:
+
+* **[Whitepaper: Modern Multi-Tenant Linux Virtualization Security & Environment Masking via `socat`](docs/linux-virtualization-security-socat.pdf):** An in-depth analysis analyzing hypervisor isolation boundaries, kernel-level tenant segregation, and utilizing `socat` for advanced network socket manipulation, traffic relaying, and environment footprint masking. This research directly informs the networking topology and secure proxy routing patterns implemented across the `legacy` infrastructure.
+
+---
+
 ## 🛠️ Repository Mapping
 * `/ansible` - Playbooks for cross-distro synchronization.
 * `/ssh` - Host shortcut configurations.
