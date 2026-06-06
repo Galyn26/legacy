@@ -190,6 +190,8 @@ flowchart LR
   H --> V
   V --> X
   V --> D
+```
+
 ## Operational Notes
 
 - The lab is designed around encrypted, named access paths rather than direct host exposure.
