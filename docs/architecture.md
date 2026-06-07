@@ -190,8 +190,21 @@ flowchart LR
   H --> V
   V --> X
   V --> D
-```
 
+  %% Telemetry Scrape Engine Lines
+  H -->|Docker Internal| P["Prometheus Engine<br/>(Port 9090)"]
+  P -->|Scrapes Exporter: 100.74.100.15:9100| H
+  P -->|Scrapes Exporter: 192.168.1.149:9100| X
+  P -->|Scrapes Exporter: 192.168.1.157:9100| D
+  G["Grafana UI<br/>(Port 3000)"] -->|Queries Metrics| P
+```
+### Telemetry & Observability Matrix
+
+| Service | Port | Scope | Role |
+| :--- | :--- | :--- | :--- |
+| **Node Exporter** | `9100` | Global (All Nodes) | Pulls bare-metal and kernel hardware metrics |
+| **Prometheus** | `9090` | Docker Container (Mint) | Time-series database scraping target endpoints every 15s |
+| **Grafana** | `3000` | Docker Container (Mint) | Multi-node visualization dashboards (Dashboard UI ID: 1860) |
 ## Operational Notes
 
 - The lab is designed around encrypted, named access paths rather than direct host exposure.
